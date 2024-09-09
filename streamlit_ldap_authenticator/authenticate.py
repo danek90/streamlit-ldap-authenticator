@@ -149,7 +149,7 @@ class Authenticate:
             if 'exp_date' not in value: raise CookieError('exp_date is not found')
             exp_date = value['exp_date']
             if type(exp_date) is not float: raise CookieError('exp_date is not float')
-            if exp_date < datetime.utcnow().timestamp(): raise CookieError('Cookie expired')
+            if exp_date < datetime.now(timezone.utc).timestamp(): raise CookieError('Cookie expired')
             
             if 'user' not in value: raise CookieError('user is not found')
             user = value['user']
