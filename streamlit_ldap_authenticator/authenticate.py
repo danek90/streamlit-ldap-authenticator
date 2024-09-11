@@ -9,7 +9,7 @@ import re
 import streamlit as st
 from streamlit_cookies_controller import CookieController
 from streamlit_rsa_auth_ui import Encryptor, SigninEvent, SignoutEvent, Object, authUI, getEvent
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from typing import Union, Callable, Literal, Optional
 from .ldap_authenticate import Connection, LdapAuthenticate
 from .exceptions import CookieError
